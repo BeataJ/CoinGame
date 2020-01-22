@@ -13,5 +13,5 @@ function isTouching(a, b) {
 const player = document.querySelector("#player");
 
 window.addEventListener("keyup", function(e) {
-  console.log(e);
+  player.style.top = "200px";
 });
