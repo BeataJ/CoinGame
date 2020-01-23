@@ -29,6 +29,7 @@ window.addEventListener("keyup", function(e) {
     player.style.left = `${currentLeft - 50}px`;
     player.style.transform = "scale(-1,1)";
   }
+  if (isTouching(player, coin)) moveCoin();
 });
 
 const extractPos = pos => {
