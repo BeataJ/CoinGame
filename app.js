@@ -13,7 +13,16 @@ function isTouching(a, b) {
 const player = document.querySelector("#player");
 
 window.addEventListener("keyup", function(e) {
-  extractPos(player.style.top);
+  if (e.key === "ArrowDown" || e.key === "Down") {
+    const currentTop = extractPos(player.style.top);
+    player.style.top = `${currentTop + 50}px`;
+  } else if (e.key === "ArrowUp" || e.key === "Up") {
+    const currentTop = extractPos(player.style.top);
+    player.style.top = `${currentTop - 50}px`;
+  }
 });
 
-const extractPos = pos => parseInt(pos.slice(0, -2));
+const extractPos = pos => {
+  if (!pos) return 100;
+  return parseInt(pos.slice(0, -2));
+};
