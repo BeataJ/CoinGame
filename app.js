@@ -11,6 +11,7 @@ function isTouching(a, b) {
 }
 
 const player = document.querySelector("#player");
+const coin = document.querySelector("#coin");
 
 window.addEventListener("keyup", function(e) {
   if (e.key === "ArrowDown" || e.key === "Down") {
