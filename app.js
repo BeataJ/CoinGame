@@ -36,4 +36,7 @@ const extractPos = pos => {
   return parseInt(pos.slice(0, -2));
 };
 
-const moveCoin = () => {};
+const moveCoin = () => {
+  const x = Math.floor(Math.random() * window.innerWidth);
+  const y = Math.floor(Math.random() * window.innerHeight);
+};
