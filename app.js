@@ -22,9 +22,11 @@ window.addEventListener("keyup", function(e) {
   } else if (e.key === "ArrowRight" || e.key === "Right") {
     const currentLeft = extractPos(player.style.left);
     player.style.left = `${currentLeft + 50}px`;
+    player.style.transform = "scale(1,1)";
   } else if (e.key === "ArrowLeft" || e.key === "Left") {
     const currentLeft = extractPos(player.style.left);
     player.style.left = `${currentLeft - 50}px`;
+    player.style.transform = "scale(-1,1)";
   }
 });
 
