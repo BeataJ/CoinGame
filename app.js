@@ -15,22 +15,28 @@ const coin = document.querySelector("#coin");
 
 window.addEventListener("keyup", function(e) {
   if (e.key === "ArrowDown" || e.key === "Down") {
-    const currentTop = extractPos(player.style.top);
-    player.style.top = `${currentTop + 50}px`;
+    moveVertical(player, 50);
   } else if (e.key === "ArrowUp" || e.key === "Up") {
-    const currentTop = extractPos(player.style.top);
-    player.style.top = `${currentTop - 50}px`;
+    moveVertical(player, -50);
   } else if (e.key === "ArrowRight" || e.key === "Right") {
-    const currentLeft = extractPos(player.style.left);
-    player.style.left = `${currentLeft + 50}px`;
+    moveHorizontal(player, 50);
     player.style.transform = "scale(1,1)";
   } else if (e.key === "ArrowLeft" || e.key === "Left") {
-    const currentLeft = extractPos(player.style.left);
-    player.style.left = `${currentLeft - 50}px`;
+    moveHorizontal(player, -50);
     player.style.transform = "scale(-1,1)";
   }
   if (isTouching(player, coin)) moveCoin();
 });
+
+const moveVertical = (element, amount) => {
+  const currentTop = extractPos(element.style.top);
+  element.style.top = `${currentTop + amount}px`;
+};
+
+const moveHorizontal = (element, amount) => {
+  const currentLeft = extractPos(element.style.left);
+  element.style.left = `${currentLeft + amount}px`;
+};
 
 const extractPos = pos => {
   if (!pos) return 100;
