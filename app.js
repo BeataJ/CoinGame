@@ -35,3 +35,5 @@ const extractPos = pos => {
   if (!pos) return 100;
   return parseInt(pos.slice(0, -2));
 };
+
+const moveCoin = () => {};
