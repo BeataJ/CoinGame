@@ -39,4 +39,6 @@ const extractPos = pos => {
 const moveCoin = () => {
   const x = Math.floor(Math.random() * window.innerWidth);
   const y = Math.floor(Math.random() * window.innerHeight);
+  coin.style.top = `${y}px`;
+  coin.style.left = `${x}px`;
 };
